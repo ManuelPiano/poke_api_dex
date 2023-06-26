@@ -1,17 +1,17 @@
 package com.pokeapi.prueba.Models.Pokemons.Type;
 
+import java.util.List;
 import lombok.*;
 
-import java.util.List;
-@Getter @Setter @AllArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Types {
 
-    private int id;
-    private String name;
+  private int id;
+  private String name;
 
-    private List<TypePokemon> pokemon;
-
-
+  private List<TypePokemon> pokemon;
 }

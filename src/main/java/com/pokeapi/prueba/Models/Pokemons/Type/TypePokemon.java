@@ -2,10 +2,12 @@ package com.pokeapi.prueba.Models.Pokemons.Type;
 
 import lombok.*;
 
-@Getter @Setter @AllArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class TypePokemon {
-    private nameList pokemon;
-    private int slot;
+  private nameList pokemon;
+  private int slot;
 }

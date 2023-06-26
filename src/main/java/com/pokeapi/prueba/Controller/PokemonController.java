@@ -2,6 +2,7 @@ package com.pokeapi.prueba.Controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pokeapi.prueba.Exceptions.PokemonNotFoundException;
 import com.pokeapi.prueba.Models.Pokemons.Pokemon;
 import com.pokeapi.prueba.Models.Pokemons.Type.Types;
 import com.pokeapi.prueba.Service.PokeApiService;
@@ -33,13 +34,12 @@ public class PokemonController {
     if (response.getStatusCode() == HttpStatus.OK) {
       jsonResponse = response.getBody();
     } else {
-
+     throw new PokemonNotFoundException(id);
     }
     ObjectMapper objectMapper = new ObjectMapper();
     Pokemon pokemon = objectMapper.readValue(jsonResponse, Pokemon.class);
     return pokemon;
   }
-
 
   @GetMapping("/types/{typeId}")
   @Operation(summary = "get a list of pokemon by types")
